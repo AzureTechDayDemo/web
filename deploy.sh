@@ -33,4 +33,4 @@ helm upgrade web ./importantThings \
 
 # helm upgrade web ./importantThings \
 #     --reuse-values \
-#     --set web.image=atddemos.azurecr.io/demo42/web:cc11
+#     --set web.image=atddemos.azurecr.io/demo42/web:cc13
