@@ -13,13 +13,13 @@ az login \
 
 az aks get-credentials \
     -g $CLUSTER_RESOURCE_GROUP \
-    -n $CLUSTER_NAME 
+    -n $CLUSTER_NAME
 
 echo -- helm init --client-only --
 helm init --client-only # > /dev/null
 
 echo -- az acr helm repo add --
-az acr helm repo add 
+az acr helm repo add
 
 echo -- helm fetch --untar $RUN_REGISTRYNAME/importantThings --
 helm fetch --untar $RUN_REGISTRYNAME/importantThings
