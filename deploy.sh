@@ -24,9 +24,9 @@ az acr helm repo add
 echo -- helm fetch --untar $RUN_REGISTRYNAME/importantThings --
 helm fetch --untar $RUN_REGISTRYNAME/importantThings
 
-echo -- helm upgrade demo42 ./importantThings --
-helm upgrade demo42 ./importantThings \
+echo -- helm upgrade web ./importantThings --
+helm upgrade web ./importantThings \
     --reuse-values \
     --set web.image=$RUN_REGISTRY/demo42/web:$RUN_ID
 
-# helm install demo42 ./importantThings --set web.image=atddemos.azurecr.io/demo42/web:ccx
+# helm install demo42 ./importantThings -n web --set web.image=atddemos.azurecr.io/demo42/web:ccx
