@@ -28,3 +28,5 @@ echo -- helm upgrade demo42 ./importantThings --
 helm upgrade demo42 ./importantThings \
     --reuse-values \
     --set web.image=$RUN_REGISTRY/demo42/web:$RUN_ID
+
+# helm install demo42 ./importantThings --set web.image=atddemos.azurecr.io/demo42/web:ccx
