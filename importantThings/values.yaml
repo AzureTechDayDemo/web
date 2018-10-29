@@ -2,7 +2,7 @@ apiVersion: v1beta2
 replicaCount: 1
 
 web:
-  image: demo42/web:cc11
+  image: demo42/web:cc12
   replicas: 2
 
 imageCredentials:

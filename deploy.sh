@@ -29,7 +29,7 @@ helm upgrade web ./importantThings \
     --reuse-values \
     --set web.image=$RUN_REGISTRY/demo42/web:$RUN_ID
 
-# helm install demo42 ./importantThings -n web --set web.image=atddemos.azurecr.io/demo42/web:ccx
+# helm install ./importantThings -n web --set web.image=atddemos.azurecr.io/demo42/web:cc12
 
 # helm upgrade web ./importantThings \
 #     --reuse-values \
