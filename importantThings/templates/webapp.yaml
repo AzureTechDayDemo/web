@@ -25,6 +25,8 @@ spec:
         ports:
         - containerPort: 80
         env:
+        - name: BACKGROUND_COLOR
+          value: '#FFFFFF'
         - name: QuotesUri
           value: http://quotes-api
         - name: ConfigPath
