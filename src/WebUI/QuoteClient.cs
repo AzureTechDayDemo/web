@@ -21,23 +21,29 @@ namespace WebUI
 
     public async Task<Quote> GetRandomQuote()
     {
-      try
-      {
+      #region BEGIN
+      // try
+      // {
+      #endregion
+
         var result = await _client.GetAsync("/quotes/rand");
         result.EnsureSuccessStatusCode();
         return await result.Content.ReadAsAsync<Quote>();
-      }
-      catch (Exception ex)
-      {
-        _logger.LogError(ex, string.Format(
-             "Unable to retrieve quote. URI: {0}", _client.BaseAddress.ToString()));
-        return new Quote
-        {
-          id = 1,
-          text = "Everything fine here, now. How are you?",
-          attribution = "Solo"
-        };
-      }
+
+      #region END
+      // }
+      // catch (Exception ex)
+      // {
+      //   _logger.LogError(ex, string.Format(
+      //        "Unable to retrieve quote. URI: {0}", _client.BaseAddress.ToString()));
+      //   return new Quote
+      //   {
+      //     id = 1,
+      //     text = "Everything fine here, now. How are you?",
+      //     attribution = "Solo"
+      //   };
+      // }
+      #endregion
     }
   }
 }
