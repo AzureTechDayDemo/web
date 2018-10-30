@@ -45,8 +45,8 @@ namespace WebUI
             //                         .Or<TimeoutRejectedException>()
             //                         .RetryAsync(3);
 
-            services.AddHttpClient<IQuoteClient, QuoteClient>();
-                    // .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(10))
+            services.AddHttpClient<IQuoteClient, QuoteClient>()
+                    .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(5));
                     // .AddTransientHttpErrorPolicy(policyBuilder => policyBuilder.RetryAsync(2))
                     // .AddTransientHttpErrorPolicy(policyBuilder => policyBuilder.CircuitBreakerAsync(2, TimeSpan.FromSeconds(20)));
 
