@@ -14,7 +14,7 @@ WORKDIR /src
 RUN dotnet test ./test/demo42tests/demo42tests.csproj
 
 FROM build AS publish
-WORKDIR /src/WebUI
+WORKDIR /src/src/WebUI
 RUN dotnet publish WebUI.csproj -c Release -o /app
 
 ARG REGISTRY_NAME=atddemo42.azurecr.io/
