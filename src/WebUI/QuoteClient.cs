@@ -22,8 +22,8 @@ namespace WebUI
     public async Task<Quote> GetRandomQuote()
     {
       #region BEGIN
-      // try
-      // {
+      try
+      {
       #endregion
 
         var result = await _client.GetAsync("/quotes/rand");
@@ -31,18 +31,18 @@ namespace WebUI
         return await result.Content.ReadAsAsync<Quote>();
 
       #region END
-      // }
-      // catch (Exception ex)
-      // {
-      //   _logger.LogError(ex, string.Format(
-      //        "Unable to retrieve quote. URI: {0}", _client.BaseAddress.ToString()));
-      //   return new Quote
-      //   {
-      //     id = 1,
-      //     text = "Everything fine here, now. How are you?",
-      //     attribution = "Solo"
-      //   };
-      // }
+      }
+      catch (Exception ex)
+      {
+        _logger.LogError(ex, string.Format(
+             "Unable to retrieve quote. URI: {0}", _client.BaseAddress.ToString()));
+        return new Quote
+        {
+          id = 1,
+          text = "Everything fine here, now. How are you?",
+          attribution = "Solo"
+        };
+      }
       #endregion
     }
   }
